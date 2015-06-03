@@ -1,0 +1,53 @@
+@mixin vendor-property($property, $value) { 
+    @each $vendor in ('-moz-', '-webkit-', '-o-', '-ms-', '') {
+        #{$vendor}#{$property}: #{$value};
+    }
+}
+
+@mixin vendor-value($property, $value) { 
+    @each $vendor in ('-moz-', '-webkit-', '-o-', '-ms-', '') {
+        #{$property}: #{$vendor}#{$value};
+    }
+}
+
+@mixin vendor($property, $value) { 
+    @each $vendor in ('-moz-', '-webkit-', '-o-', '-ms-', '') {
+        #{$vendor}#{$property}: #{$vendor}#{$value};
+    }
+}
+
+@mixin vendor-keyframes($name) {
+	@-moz-keyframes #{$name} { @content; }
+	@-webkit-keyframes #{$name} { @content; }
+	@-o-keyframes #{$name} { @content; }
+	@-ms-keyframes #{$name} { @content; }
+	@keyframes #{$name} { @content; }
+}
+
+@mixin icon($content: false) {
+	text-decoration: none;
+
+	&:before {
+		@if $content {
+			content: $content;
+		}
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-transform: none !important;
+	}
+}
+
+@mixin icon-rhombus($icon, $icon-hover, $color, $size) {
+	background-size: auto $size;
+	background-repeat: no-repeat;
+	background-image: image-url($icon), none; /* Modern browsers */
+	background-position: center;
+	&:hover {
+		background-image: image-url($icon-hover), none; /* Modern browsers */
+		background-color: $color;
+		border-color: $color!important;
+	}
+}

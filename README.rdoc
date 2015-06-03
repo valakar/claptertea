@@ -1,0 +1,12 @@
+= Clapter Tea site
+
+Business site for goldman ventures company
+{Clapter Tea}[http://clapter.com/]
+
+== Technology used:
+  - Ruby on Rails
+  - HTML
+  - CSS, Scss
+  - JavaScript, jQuery
+  - modernizr.js
+  - Bootstrap
