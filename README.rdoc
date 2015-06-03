@@ -6,7 +6,7 @@ Business site for goldman ventures company
 == Technology used:
   - Ruby on Rails
   - HTML
-  - CSS, Scss
+  - CSS, Sass, Compass
   - JavaScript, jQuery
-  - modernizr.js
-  - Bootstrap
+  - Font Awesome
+  - skel.js
